@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    width:90%;
+    max-width:500px;
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:12px;
+    background:#ff5e8a;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff3c72;
+}
+
+input{
+    padding:10px;
+    width:80%;
+    margin-top:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.hidden{
+    display:none;
+}
+
+h1{
+    color:#ff4081;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Page 1 -->
+    <div id="page1">
+        <h1>🎂 Happy Birthday, Daddy ko! ❤️</h1>
+        <p>
+            Today is all about celebrating you.
+        <br><br>
+        Thank you for always taking care of me, for making me laugh, and for being the amazing husband that you are.
+        <br><br>
+        No matter how many birthdays come and go, you'll always be my Honey, my Bebi, and my favorite person.
+        <br><br>
+        I hope this little surprise makes you smile hehe I love you more than doing this kind of thing dad!
+        </p>
+
+        <button onclick="showPage('page2')">
+            Click Here
+        </button>
+    </div>
+
+    <!-- Question 1 -->
+    <div id="page2" class="hidden">
+        <h2>🤨 Are you Iah's husband?</h2>
+
+        <button onclick="notHusband()">No</button>
+
+        <button onclick="showPage('page3')">
+            Yes
+        </button>
+    </div>
+
+    <!-- Question 2 -->
+    <div id="page3" class="hidden">
+        <h2>🎂 When is your birthday?</h2>
+
+        <input type="text" placeholder="Type your birthday here">
+
+        <br><br>
+
+        <button onclick="showPage('page4')">
+            OK
+        </button>
+    </div>
+
+    <!-- Question 3 -->
+    <div id="page4" class="hidden">
+        <h2>❤️ Do you love your wife?</h2>
+
+        <button onclick="showPage('page5')">
+            Yes
+        </button>
+
+        <button onclick="showPage('page5')">
+            Of course
+        </button>
+    </div>
+
+    <!-- Reward -->
+    <div id="page5" class="hidden">
+        <h2>🎉 CONGRATULATIONS! 🎉</h2>
+
+        <p>
+            You passed the husband test with flying colors!
+            <br><br>
+            Here's your birthday reward ❤️
+        </p>
+
+        <button onclick="openGift()">
+            Click Here
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+function showPage(pageId){
+
+    const pages = [
+        'page1',
+        'page2',
+        'page3',
+        'page4',
+        'page5'
+    ];
+
+    pages.forEach(page=>{
+        document.getElementById(page).classList.add('hidden');
+    });
+
+    document.getElementById(pageId).classList.remove('hidden');
+}
+
+function notHusband(){
+    alert("😠 WRONG ANSWER! TRY AGAIN!");
+}
+
+function openGift(){
+    alert("🎁 Your birthday gift is still being prepared by Iah. Please check back soon! ❤️");
+}
+</script>
+
+</body>
+</html>
